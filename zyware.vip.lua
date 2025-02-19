@@ -5560,7 +5560,7 @@ tab:Aimbot{}
 
 
 
-local sec = tab:Section{
+local sec = tab:rage{
     Side = "Right"
 }
 
