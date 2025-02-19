@@ -3230,10 +3230,10 @@ function library:Loader(options)
     utility.format(options);
 
     utility.defaults(options, {
-        title = "Exodus",
+        title = "zyware",
         description = "Loading...",
         percentage = 50,
-        date = "16/01/22",
+        date = "06/06/27",
         added = {},
         changed = {},
         removed = {},
@@ -4539,10 +4539,10 @@ function library:Load(options)
     utility.format(options)
 
     utility.defaults(options, {
-        title = options.name or "exodus",
+        title = options.name or "zayware",
         theme = "Default",
         overrides = {},
-        folder = "exodus",
+        folder = "zayware",
         extension = "json",
         game = "universal",
         tweenspeed = options.animspeed or 0.1,
@@ -5385,7 +5385,7 @@ function library:Load(options)
 
         misc:Toggle{
             name = "Show Player List",
-            default = false,
+            default = library.keybind_list_default,
             flag = "player_list",
             callback = function(value)
                 library.Playerlist.toggled = value
@@ -5547,7 +5547,7 @@ library.Playerlist:Label{name = "Team: ", handler = function(plr)
 end}
 
 
-local watermark = library:Watermark("exodus | dev | test | 2.3b fps")
+local watermark = library:Watermark("zyware.vip | dev | test | 60 fps")
 window:SettingsTab(watermark)
 
 local tab = window:Tab("rage")
