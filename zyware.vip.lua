@@ -4539,10 +4539,10 @@ function library:Load(options)
     utility.format(options)
 
     utility.defaults(options, {
-        title = options.name or "zayware",
+        title = options.name or "zyware",
         theme = "Default",
         overrides = {},
-        folder = "zayware",
+        folder = "zyware.vip",
         extension = "json",
         game = "universal",
         tweenspeed = options.animspeed or 0.1,
@@ -4559,7 +4559,7 @@ function library:Load(options)
         keybindlist = true,
         font = worldtoscreen ~= nil and "system" or "plex",
         fontsize = 13,
-        discord = "6wp393UeCc",
+        discord = "nul",
         sizex = 700,
         sizey = 550
     })
@@ -5556,7 +5556,7 @@ window:Tab("aim assist"):Section{
     Side = "left"
 }
 
-tab:Section{}
+tab:Aimbot{}
 
 
 
