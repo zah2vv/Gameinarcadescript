@@ -3230,10 +3230,10 @@ function library:Loader(options)
     utility.format(options);
 
     utility.defaults(options, {
-        title = "zyware.vip",
+        title = "Exodus",
         description = "Loading...",
         percentage = 50,
-        date = "02/18/25",
+        date = "16/01/22",
         added = {},
         changed = {},
         removed = {},
@@ -4539,10 +4539,10 @@ function library:Load(options)
     utility.format(options)
 
     utility.defaults(options, {
-        title = options.name or "zyware.vip",
+        title = options.name or "exodus",
         theme = "Default",
         overrides = {},
-        folder = "zyware.vip",
+        folder = "exodus",
         extension = "json",
         game = "universal",
         tweenspeed = options.animspeed or 0.1,
@@ -5152,7 +5152,7 @@ function library:Load(options)
     function window_types:SettingsTab(watermark, unload)
         unload = unload or function() library.unload(library) end
 
-        local settings = self:Tab(" Settings")
+        local settings = self:Tab("Settings")
         local configs = settings:Section{name = "Configs"}
         local autoload
 
@@ -5433,7 +5433,37 @@ function library:Load(options)
             end
         }
 
+        misc:Slider{
+            name = "Tween Speed",
+            default = library.tween_speed,
+            min = 0,
+            max = 1,
+            flag = "tween_speed",
+            callback = function(value)
+                library.tween_speed = value;
+            end
+        }
 
+        misc:Slider{
+            name = "Fade Speed",
+            default = library.fade_speed,
+            min = 0,
+            max = 1,
+            flag = "fade_speed",
+            callback = function(value)
+                library.toggle_speed = value;
+            end
+        }
+
+        misc:Dropdown{
+            name = "Easing Style",
+            default = tostring(library.easing_style):gsub("Enum.EasingStyle.", ""),
+            content = {"Linear", "Sine", "Back", "Quad", "Quart", "Quint", "Bounce", "Elastic", "Exponential", "Circular", "Cubic"},
+            flag = "easing_style",
+            callback = function(style)
+                library.easing_style = Enum.EasingStyle[style]
+            end
+        }
 
         misc:Button{
             name = "Unload",
@@ -5442,11 +5472,38 @@ function library:Load(options)
             end
         }
 
-        
+        misc:Button{
+            name = "Copy Game Invite (CONSOLE)",
+            callback = function()
+                setclipboard(('Roblox.GameLauncher.joinGameInstance(%s, "%s")'):format(game.PlaceId, game.JobId))
+            end
+        }
 
-        
+        misc:Button{
+            name = "Copy Game Invite (LUA)",
+            callback = function()
+                setclipboard(('game:GetService("TeleportService"):TeleportToPlaceInstance(%s, "%s")'):format(game.PlaceId, game.JobId))
+            end
+        }
 
-       
+        misc:Button{
+            name = "Join Discord Server",
+            callback = function()
+                request{
+                    ["Url"] = "http://127.0.0.1:6463/rpc?v=1",
+                    ["Method"] = "POST",
+                    ["Headers"] = {
+                        ["Content-Type"] = "application/json",
+                        ["Origin"] = "https://discord.com"
+                    },
+                    ["Body"] = services.HttpService:JSONEncode{
+                        ["cmd"] = "INVITE_BROWSER",
+                        ["nonce"] = ".",
+                        ["args"] = {code = library.discord}
+                    }
+                }
+            end
+        }
 
         misc:Button{
             name = "Copy Discord Invite",
@@ -5490,7 +5547,7 @@ library.Playerlist:Label{name = "Team: ", handler = function(plr)
 end}
 
 
-local watermark = library:Watermark("zyware.vip | dev | test | 60 fps")
+local watermark = library:Watermark("exodus | dev | test | 2.3b fps")
 window:SettingsTab(watermark)
 
 local tab = window:Tab("rage")
