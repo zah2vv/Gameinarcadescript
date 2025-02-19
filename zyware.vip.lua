@@ -3230,7 +3230,7 @@ function library:Loader(options)
     utility.format(options);
 
     utility.defaults(options, {
-        title = "zyware",
+        title = "zyware.vip",
         description = "Loading...",
         percentage = 50,
         date = "06/06/27",
@@ -4539,7 +4539,7 @@ function library:Load(options)
     utility.format(options)
 
     utility.defaults(options, {
-        title = options.name or "zyware",
+        title = options.name or "zyware.vip",
         theme = "Default",
         overrides = {},
         folder = "zyware.vip",
@@ -5152,7 +5152,7 @@ function library:Load(options)
     function window_types:SettingsTab(watermark, unload)
         unload = unload or function() library.unload(library) end
 
-        local settings = self:Tab("Settings")
+        local settings = self:Tab(" Settings")
         local configs = settings:Section{name = "Configs"}
         local autoload
 
@@ -5561,7 +5561,7 @@ tab:Aimbot{}
 
 
 local sec = tab:rage{
-    Side = "Right"
+    Side = "Left"
 }
 
 local label = sec:Label("fart")
@@ -5571,7 +5571,7 @@ sec:Button{}
 sec:Button{}
 sec:Button{}
 sec:Button{}
-sec:Dropdown{content = {"hi", "bye"}}
+sec:Dropdown{content = {"Head", "HumanoidRootPart"}}
 
 sec:Button{}
 local m = sec:Separator()
@@ -5630,8 +5630,8 @@ label:Set("hi")
 local tab2 = window:Tab("test")
 local f = tab2:SubTab("hi")
 local g = tab2:SubTab("testf")
-local r = f:Section{name = "fart"}
-r:Button{}
+local r = f:Section{name = "Anti Lock"}
+sec:Button{name = "Sky Antilock "z", callback = function() "loadstring(game:HttpGet(('https://raw.githubusercontent.com/AvianProjects/Dahood/main/AntilockerV2'),true))()" end}
 
 local r = g:Section{name = "poop"}
 r:Button{}
