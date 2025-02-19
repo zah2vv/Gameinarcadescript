@@ -5388,7 +5388,7 @@ function library:Load(options)
             default = library.keybind_list_default,
             flag = "player_list",
             callback = function(value)
-                library.Playerlist.toggled = value
+                library.Playerlist.toggled = false
 
                 if library.open then
                     library.Playerlist.object.Visible = value
