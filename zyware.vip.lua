@@ -5151,6 +5151,43 @@ function library:Load(options)
 
     
 
+
+--[[local window = library:Load{playerlist = true}
+
+library.Playerlist:button{name = "Prioritize", callback = function(list, plr)
+    if not list:IsTagged(plr, "Prioritized") then
+        list:Tag{player = plr, text = "Prioritized", color = fromRGB(255, 0, 0)}
+    else
+        list:RemoveTag(plr, "Prioritized")
+    end
+end}
+
+library.Playerlist:button{name = "Ignore", callback = function(list, plr)
+    if not library.Playerlist:IsTagged(plr, "Ignored") then
+        library.Playerlist:Tag{player = plr, text = "Ignored", Color = fromRGB(120, 120, 120)}
+    else
+        library.Playerlist:RemoveTag(plr, "Ignored")
+    end
+end}
+
+library.Playerlist:Label{name = "Rank: ", handler = function(plr)
+    return "1e+9"
+end}
+
+library.Playerlist:Label{name = "Team: ", handler = function(plr)
+    return "Ghosts", fromRGB(209, 118, 0)
+end}
+
+
+local watermark = library:Watermark("zyware.vip | dev | test | 60 fps")
+
+
+local tab = window:Tab("rage")
+local tab2 = window:Tab("visuals")
+window:Tab("aim assist"):Section{
+    Side = "left"
+}
+
 tab:Aimbot{}
 
 
