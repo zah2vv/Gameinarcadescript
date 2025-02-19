@@ -5385,7 +5385,7 @@ function library:Load(options)
 
         misc:Toggle{
             name = "Show Player List",
-            default = library.keybind_list_default,
+            default = false,
             flag = "player_list",
             callback = function(value)
                 library.Playerlist.toggled = value
