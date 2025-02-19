@@ -5448,7 +5448,19 @@ function library:Load(options)
 
        
 
-        
+        misc:Button{
+            name = "Copy Discord Invite",
+            callback = function()
+                setclipboard(library.discord)
+            end
+        }
+
+        return settings
+    end
+
+    utility.format(window_types, true)
+    return window_types
+end
 
 
 --[[local window = library:Load{playerlist = true}
