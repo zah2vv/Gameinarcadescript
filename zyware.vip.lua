@@ -3230,10 +3230,10 @@ function library:Loader(options)
     utility.format(options);
 
     utility.defaults(options, {
-        title = "Exodus",
+        title = "zyware.vip",
         description = "Loading...",
         percentage = 50,
-        date = "16/01/22",
+        date = "02/18/25",
         added = {},
         changed = {},
         removed = {},
@@ -4539,10 +4539,10 @@ function library:Load(options)
     utility.format(options)
 
     utility.defaults(options, {
-        title = options.name or "exodus",
+        title = options.name or "zyware.vip",
         theme = "Default",
         overrides = {},
-        folder = "exodus",
+        folder = "zyware.vip",
         extension = "json",
         game = "universal",
         tweenspeed = options.animspeed or 0.1,
@@ -5152,7 +5152,7 @@ function library:Load(options)
     function window_types:SettingsTab(watermark, unload)
         unload = unload or function() library.unload(library) end
 
-        local settings = self:Tab("Settings")
+        local settings = self:Tab(" Settings")
         local configs = settings:Section{name = "Configs"}
         local autoload
 
@@ -5547,7 +5547,7 @@ library.Playerlist:Label{name = "Team: ", handler = function(plr)
 end}
 
 
-local watermark = library:Watermark("exodus | dev | test | 2.3b fps")
+local watermark = library:Watermark("zyware.vip | dev | test | 60 fps")
 window:SettingsTab(watermark)
 
 local tab = window:Tab("rage")
