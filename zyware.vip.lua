@@ -5552,8 +5552,8 @@ window:SettingsTab(watermark)
 
 local tab = window:Tab("rage")
 local tab2 = window:Tab("visuals")
-window:Tab("legit"):Section{
-    Side = "Middle"
+window:Tab("aim assist"):Section{
+    Side = "left"
 }
 
 tab:Section{}
