@@ -5632,7 +5632,7 @@ local f = tab2:SubTab("hi")
 local g = tab2:SubTab("testf")
 local r = f:Section{name = "Anti Lock"}
 sec:Toggle{name = "Sky Antilock"}
-local fartel = sec:Toggle{name = "keybind toggle"}
+local fartel = sec:Toggle{name = "Nigga"}
 local r = g:Section{name = "poop"}
 r:Button{}
 
