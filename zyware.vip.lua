@@ -5631,8 +5631,8 @@ local tab2 = window:Tab("test")
 local f = tab2:SubTab("hi")
 local g = tab2:SubTab("testf")
 local r = f:Section{name = "Anti Lock"}
-sec:Button{name = "Sky Antilock "z", callback = function() "loadstring(game:HttpGet(('https://raw.githubusercontent.com/AvianProjects/Dahood/main/AntilockerV2'),true))()" end}
-
+sec:Toggle{name = "Sky Antilock"}
+local fartel = sec:Toggle{name = "keybind toggle"}
 local r = g:Section{name = "poop"}
 r:Button{}
 
