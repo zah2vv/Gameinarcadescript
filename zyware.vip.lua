@@ -5552,6 +5552,7 @@ window:SettingsTab(watermark)
 
 local tab = window:Tab("rage")
 local tab2 = window:Tab("visuals")
+local tab3 = window:Tab("Config")
 window:Tab("aim assist"):Section{
     Side = "left"
 }
@@ -5631,8 +5632,8 @@ local tab2 = window:Tab("anti aim")
 local f = tab2:SubTab("hi")
 local g = tab2:SubTab("testf")
 local r = f:Section{name = "Anti Lock"}
-tab2:Toggle{name = "Sky Antilock"}
-local fartel = tab2:Toggle{name = "Nigga"}
+sec:Toggle{name = "Sky Antilock"}
+local fartel = sec:Toggle{name = "Nigga"}
 local r = g:Section{name = "poop"}
 r:Button{}
 
