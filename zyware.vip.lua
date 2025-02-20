@@ -5552,7 +5552,7 @@ window:SettingsTab(watermark)
 
 local tab = window:Tab("rage")
 local tab2 = window:Tab("visuals")
-local tab3 = window:Tab("Config")
+local tab3 = window:Tab("anti")
 window:Tab("aim assist"):Section{
     Side = "left"
 }
@@ -5631,11 +5631,11 @@ label:Set("hi")
 local tab2 = window:Tab("anti aim")
 local f = tab2:SubTab("hi")
 local g = tab2:SubTab("testf")
-local r = tab2:Section{name = "Anti Lock"}
+local r = f:Section{name = "Anti Lock"}
 
 sec:Toggle{name = "Sky Antilock"}
-local tab2 = sec:Toggle{name = "N"}
-local tab2 = g:Section{name = "poop"}
+local fartel = sec:Toggle{name = "N"}
+local r = g:Section{name = "poop"}
 r:Button{}
 
 library:Init()
